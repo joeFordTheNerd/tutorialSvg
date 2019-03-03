@@ -1,0 +1,50 @@
+body{
+    background-image: url(bgdrawing.svg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: cover;
+}
+
+path.rectText {
+    opacity:0;
+    stroke-dasharray: 735;
+    animation: textDraw 4s cubic-bezier(.56,-0.04,.32,.7) forwards;
+    animation-delay: 1s;
+}
+
+rect.rectBackground{
+    opacity: 0;
+    animation: rectFade 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+
+@keyframes textDraw {
+
+    0%{
+        fill:rgb(255, 255, 255, 0);
+        stroke:#fff;
+        stroke-dashoffset: 735;
+        opacity: 1;
+    }
+
+    40%{
+        stroke-dashoffset: 0;
+        fill:rgb(255, 255, 255, 0.0);
+    }
+
+    100%{
+        fill:rgb(255, 255, 255, 1);
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes rectFade{
+    from {
+        width: 1%;
+    }
+    
+    to {
+        width:100%;
+        opacity: 1;
+    }
+}
